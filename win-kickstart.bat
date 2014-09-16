@@ -68,7 +68,7 @@ git checkout %selected_nimrod_branch%
 if ERRORLEVEL 1 (
 	echo Couldn't check out the branch '%selected_nimrod_branch%'
 	goto:checkout_branches
-	)
+)
 
 cd csources
 git checkout %selected_csources_branch%
@@ -76,7 +76,7 @@ if ERRORLEVEL 1 (
 	echo Couldn't check out the branch '%selected_csources_branch%'
 	cd ..
 	goto:checkout_branches
-	)
+)
 
 
 :: Build the basic nimrod binary
