@@ -13,7 +13,7 @@ set default_csources_directory="csources"
 
 set default_arch="64"
 echo %PROCESSOR_ARCHITECTURE% | findstr "64"
-if ERRORLEVEL 1 set arch="32"
+if ERRORLEVEL 1 set default_arch="32"
 
 
 :: Get the installation path
@@ -22,7 +22,7 @@ set /P nimrod_directory="Installation path? (default: 'Nimrod')"
 if "%nimrod_directory%"=="" set nimrod_directory="Nimrod"
 if EXIST %nimrod_directory% (
 	choice /C "cr" /M "Warning, target directory exists. [C]ontinue, or [R]e-input path name?" 
-	if ERRORLEVEL 1 (
+	if ERRORLEVEL 2 (
 		goto:get_install_path
 	)
 )
